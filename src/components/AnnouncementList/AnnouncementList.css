@@ -1,0 +1,52 @@
+.announcements {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  .announcement {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .announcement-content {
+    flex: 1;
+    margin-right: 15px;
+  }
+  
+  .announcement-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .announcement-description {
+    font-size: 14px;
+    color: #ccc;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .announcement-author {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #aaa;
+  }
+  
+  .announcement-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .announcement-time {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 5px;
+  }

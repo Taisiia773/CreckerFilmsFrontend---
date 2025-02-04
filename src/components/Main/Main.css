@@ -1,0 +1,20 @@
+.container {
+    margin: auto;
+    margin-top: 0px;
+    width: 65%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1{
+    color: white;
+}
+
+.AnnouncementsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
+    gap: 5%;
+    width: auto;
+}

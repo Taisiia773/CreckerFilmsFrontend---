@@ -1,0 +1,69 @@
+.film-container {
+    margin: auto;
+    margin-top: 0px;
+    width: 65%;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+.film-name{
+    width: 100%;
+    padding: 3px;
+    padding-left: 7px;
+    background-color: #212020;
+    border-radius: 10px;
+    border-bottom: 2px solid #000000;
+}
+
+.film-content{
+    display: flex;
+    align-items: start;
+}
+
+.film-info{
+    padding-left: 10;
+}
+
+.comments{
+    display: flex;
+    width: 400px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.comment-one{
+    background-color: #363131;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    min-height: 200px;
+    min-width: 300px;
+    
+    margin-bottom: 10px;
+
+}
+
+.film-information-div{
+    background-color: rgba(29, 27, 27, 0.7);
+    font-family: 'Post No Bills Colombo ExtraBold', sans-serif;
+}
+
+.text-abt-film{
+    font-family: 'Post No Bills Colombo ExtraBold', sans-serif;
+}
+
+.film-information{
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.film-some-facts{
+    background-color: rgba(29, 27, 27, 0.7);
+    font-family: "Inter";
+    /* font-style: normal; */
+    font-weight: 300;
+    font-size: 24px;
+    color: #FFFFFF;
+}
