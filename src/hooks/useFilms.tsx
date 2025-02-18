@@ -14,6 +14,7 @@ export interface IFilm {
     country: string
     age: number
     genre: string
+    genreId: number
     img: string
 }
 // img в експресс модели нету. Ошибка будет пока не добавить

@@ -32,7 +32,7 @@ export function Film(props: IFilmProps, ){
                 }}>
 
                 
-                <div className="Film">
+                <div className="film">
                     <img src={props.img} alt="aboba" className="film-image"/>
                     <div className="film-text-div">
                         <p className="name">{props.name}</p>

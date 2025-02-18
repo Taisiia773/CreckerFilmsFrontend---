@@ -1,0 +1,61 @@
+.log-container {
+    display: flex;
+    margin: auto;
+    margin-top: 0px;
+    width: 630px;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+}
+
+.log-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.log-input{
+    width: 570px;
+    padding: 13px;
+    margin-top: 33px;
+    border-radius: 17px;
+    background-color: #56565650;
+}
+
+/* .log-input::placeholder{
+    color: white;
+} */
+
+.log-link-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 17px;
+}
+
+.log-forgot-pass,
+.log-reg-link{
+    color: white;
+    text-decoration: none;
+}
+
+.log-btn-div{
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log-btn{
+    color: #d5d2d2;
+    background-color: #56565650;
+    width: max-content;
+    padding: 13px;
+    padding-left: 27px;
+    padding-right: 27px;
+    border-radius: 23px;
+    border: #56565650 solid 1px;
+}
+
+

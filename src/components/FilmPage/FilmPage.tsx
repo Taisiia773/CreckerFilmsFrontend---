@@ -2,10 +2,21 @@ import { useParams } from "react-router-dom"
 import { useFilmById } from "../../hooks/useFilmById"
 import { TailSpin } from "react-loader-spinner"
 import "./FilmPage.css"
+import { useGenresById } from "../../hooks/useGenres"
 
 export function FilmPage(){
    const params = useParams()
-   const {film, error, loading} = useFilmById(Number(params.id))
+//    const {film, error, loading} = useFilmById(Number(params.id))
+//    const id = film?.genreId
+//    console.log(id)
+//    const {genre} = useGenresById(id)
+//    console.log(id)
+    const { film, error, loading } = useFilmById(Number(params.id))
+    const genreId = film?.genreId
+    const { genre } = useGenresById(genreId)
+    console.log("Genre ID:", genreId)
+    console.log("Genre:", genre?.name)
+
    return(
     <div>
         {loading === true ? 
@@ -36,7 +47,7 @@ export function FilmPage(){
                         <p className="film-language">Язык: {film?.language}</p>
                         <p className="film-country">Страна: {film?.country}</p>
                         <p className="film-age">Возраст: {film?.age}</p>
-                        <p className="film-genre">Жанр: {film?.genre}</p>
+                        <p className="film-genre">Жанр: {genre?.name}</p>
                     </div>
                 </div>
                 {/* о фильме */}

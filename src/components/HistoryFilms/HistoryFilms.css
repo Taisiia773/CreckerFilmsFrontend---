@@ -1,0 +1,10 @@
+.link-film{
+    text-decoration: none;
+    border: none; 
+}
+
+.historyFilms{
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}

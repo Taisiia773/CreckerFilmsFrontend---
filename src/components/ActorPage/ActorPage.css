@@ -1,0 +1,48 @@
+.actors-container {
+    margin: auto;
+    margin-top: 0px;
+    width: 65%;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+.actor-name{
+    width: 100%;
+    padding: 3px;
+    padding-left: 7px;
+    background-color: #212020;
+    border-radius: 10px;
+    border-bottom: 2px solid #000000;
+}
+
+.actor-content{
+    display: flex;
+    align-items: start;
+}
+
+.actor-image{
+    width: 230px;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 7px;
+}
+
+.actor-info{
+    padding-left: 10;
+}
+
+.actor-information-div{
+    background-color: rgba(29, 27, 27, 0.7);
+    font-family: 'Post No Bills Colombo ExtraBold', sans-serif;
+}
+
+.actor-abt-film{
+    font-family: 'Post No Bills Colombo ExtraBold', sans-serif;
+}
+
+.actor-information{
+    padding-top: 10px;
+    font-size: 15px;
+}

@@ -12,17 +12,33 @@
 }
 
 .SelectCategories{
-    border: 1px solid white;
-    background-color: black;
+    margin-top: 20px;
     color: white;
     font-size: 17px;
     border-radius: 23px;
     width: max-content;
     height: max-content;
+    display: flex;
+    flex-direction: row;
 }
-.SelectCategories:active{
+
+.SelectCategory{
+    width: 107px;
+    height: 27px;
+    margin: 7px;
+    padding: 3px;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .SelectCategory:active{
     border: 3px solid white;
-}
+} */
+
 
 .FilmsList-section{
     display: flex;
@@ -31,4 +47,26 @@
     gap: 3%;
     flex-wrap: wrap;
     width: auto;
+}
+
+.film-button{
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    border: none; 
+}
+
+.film-text-div{
+    height: 50px;
+}
+
+.filmsDiv{
+    display: flex;
+    flex-direction: row;
+    /* gap: 15px; */
+    /* margin: 15px; */
+}
+
+.historyFilms{
+    display: flex;
+    flex-direction: row;
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useHistoryContext } from "../context/historyContext"
+import "./HistoryFilms.css"
 
 
 export function HistoryFilms() {
@@ -7,13 +8,15 @@ export function HistoryFilms() {
     console.log(historyItems)
 
 	return (
-		<div>
+		<div className="historyFilms">
 			{historyItems.map((historyItem) => {
 				return (
-                    <Link to={`/film/${historyItem.id}`}>
-                        <div key={historyItem.id}>
-                            <h1>{historyItem.name}</h1>
-                            <img src={historyItem.img} />
+                    <Link className="link-film" to={`/film/${historyItem.id}`}>
+                        <div className="film" key={historyItem.id}>
+                            <img src={historyItem.img} className="film-image" />
+							<div className="film-text-div">
+								<p className="name">{historyItem.name}</p>
+							</div>
                         </div>
                     </Link>
 				)

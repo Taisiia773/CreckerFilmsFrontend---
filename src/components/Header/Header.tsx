@@ -28,7 +28,7 @@ export function Header(){
 
                         <button className="SignIn">
                             <div className="SignInSection">
-                                <p className="SignInText">Sign in</p>
+                                <Link to={`/login`} className="SignInText">Sign in</Link>
                             </div>
                         </button>
                     </div>

@@ -5,114 +5,106 @@ import { useFilms } from '../../hooks/useFilms'
 import { useGenres } from '../../hooks/useGenres'
 import "./FilmsList.css"
 
-const films = [
-    {
-        name: "Дэдпул и Росомаха",
-        genre:"boss fimoz",
-        img: "https://static.hdrezka.ac/i/2024/10/1/wcc0cad3b0584zr82h94s.jpg",
-        id: 0
-    },
-    {
-        name: "Дэдпул и Росомаха",
-        genre:"monster abayudno",
-        img: "https://static.hdrezka.ac/i/2024/10/1/wcc0cad3b0584zr82h94s.jpg",
-        id: 1
-    },
-    {
-        name: "Дэдпул и Росомаха",
-        genre:"Serega Pirate",
-        img: "https://static.hdrezka.ac/i/2024/10/1/wcc0cad3b0584zr82h94s.jpg",
-        id: 2
-    },
-    {
-        name: "Дэдпул и Росомаха",
-        genre:"papa wildberries",
-        img: "https://static.hdrezka.ac/i/2024/10/1/wcc0cad3b0584zr82h94s.jpg",
-        id: 3
-    },
-]
+
 
 export function FilmsList(){
     const {films, loading, error } = useFilms()
-    const [selectedGenre, setSelectedGenre] = useState("All")
+    const {genres, loading: genresLoading, error: genresError,} = useGenres();
+    const [selectedGenre, setSelectedGenre] = useState<string[]>([])
     const [FilteredFilms, setFilteredFilms] = useState(films)
+    const tempArray = [...FilteredFilms, films]
     useEffect(() => {
-        console.log(selectedGenre)
-        if (selectedGenre === "All") {
-            setFilteredFilms(films)
+        if (selectedGenre.length === 0) {
+            setFilteredFilms(films); 
         } else {
             const filtered = films.filter((film) => {
-                return film.genre === selectedGenre
-            })
-            setFilteredFilms(filtered)
+                return selectedGenre.includes(String(film.genreId));
+            });
+            setFilteredFilms(filtered);
         }
-    }, [selectedGenre, films])
-    const {genres, loading: genresLoading, error: genresError,} = useGenres();
+    }, [selectedGenre, films]);
+
+    const handleGenreChange = (genreId: string) => {
+        setSelectedGenre((prevSelected) => {
+            if (prevSelected.includes(genreId)) {
+                return prevSelected.filter((id) => id !== genreId);
+            } else {
+                return [...prevSelected, genreId];
+            }
+        });
+    };
+
+    
+
+    
 
     return (
         <div className="films">
-            <div className="historyFilms">
-                
-            </div>
             <div className="filter">
             {genresLoading ? (
-					<TailSpin
-						visible={true}
-						height="80"
-						width="80"
-						color="#4fa94d"
-						ariaLabel="tail-spin-loading"
-						radius="1"
-						wrapperStyle={{}}
-						wrapperClass=""
-					/>
-				) : genresError ? (
-					<h1>{genresError}</h1>
-				) : (
-                <select className="SelectCategories" onChange={(event) => {
-                    const selectedValue = event.target.value
-                    setSelectedGenre(selectedValue)
-                }}>
-                    <option value="All">All</option>
-                    <option value="boss fimoz">boss fimoz</option>
-                    <option value="monster abayudno">monster abayudno</option>
-                    <option value="Serega Pirate">Serega Pirate</option>
-                    <option value="papa wildberries">papa wildberries</option>
-                </select>
+                    <TailSpin
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#4fa94d"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    />
+                ) : genresError ? (
+                    <h1>{genresError}</h1>
+                ) : (
+                <div className="SelectCategories">
+                    {genres.map((genre) => (
+                        <div className='SelectCategory'>
+                            <label className='categoryName' key={genre.id}>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedGenre.includes(String(genre.id))}
+                                    onChange={() => handleGenreChange(String(genre.id))}
+                                />
+                                {genre.name}
+                            </label>
+                        </div>
+                    ))}
+                </div>
+
+                
+
                 )}
             </div>
 
             <section className='FilmsList-section'>
             {loading === true ? (
-				<div className="loader">
-					<TailSpin
-						visible={true}
-						height="80"
-						width="80"
-						color="#4fa94d"
-						ariaLabel="tail-spin-loading"
-						radius="1"
-						wrapperStyle={{}}
-						wrapperClass=""
-					/>
-				</div>
-			) : error !== "" ? (
-				<div>{error}</div>
-			) : (
-				<div className="productsDiv">
-					{FilteredFilms.map((film) => {
+                <div className="loader">
+                    <TailSpin
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#4fa94d"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    />
+                </div>
+            ) : error !== "" ? (
+                <div>{error}</div>
+            ) : (
+                <div className="filmsDiv">
+                    {FilteredFilms.map((film) => {
 
-							return <Film 
+                            return <Film
                             id={film.id}
                             img={film.img}
                             genre={film.genre}
                             name={film.name}
                             key={film.id} />
                 })}
-				</div>
-			)}
+                </div>
+            )}
             </section>
         </div>
     )
 }
-
