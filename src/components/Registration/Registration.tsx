@@ -6,7 +6,7 @@ export function RegistrationPage(){
    return(
         <div className="log-container">
                 <div className="log-text">
-                    <h1>Регестрация</h1>
+                    <h1>Регистрация</h1>
                 </div>
                 <div className="log-content">
 
@@ -20,7 +20,7 @@ export function RegistrationPage(){
                     </div>
 
                     <div className="log-btn-div">
-                        <button className="log-btn">Зарегестрироваться</button>
+                        <button className="log-btn">Зарегистрироваться</button>
                     </div>
                 </div>
         </div>

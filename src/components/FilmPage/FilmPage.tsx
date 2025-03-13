@@ -3,19 +3,20 @@ import { useFilmById } from "../../hooks/useFilmById"
 import { TailSpin } from "react-loader-spinner"
 import "./FilmPage.css"
 import { useGenresById } from "../../hooks/useGenres"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export function FilmPage(){
-   const params = useParams()
-//    const {film, error, loading} = useFilmById(Number(params.id))
-//    const id = film?.genreId
-//    console.log(id)
-//    const {genre} = useGenresById(id)
-//    console.log(id)
+    const params = useParams()
     const { film, error, loading } = useFilmById(Number(params.id))
-    const genreId = film?.genreId
+    const [genreId, setGenreId] = useState<number | undefined>(undefined)
     const { genre } = useGenresById(genreId)
-    console.log("Genre ID:", genreId)
-    console.log("Genre:", genre?.name)
+
+    useEffect(() => {
+        if (film?.genreId !== undefined) {
+            setGenreId(film.genreId) 
+        }
+    }, [film])
 
    return(
     <div>
@@ -48,6 +49,7 @@ export function FilmPage(){
                         <p className="film-country">Страна: {film?.country}</p>
                         <p className="film-age">Возраст: {film?.age}</p>
                         <p className="film-genre">Жанр: {genre?.name}</p>
+                        <p className="film-actors">Актёры: <Link className="link-film-actors" to={`/actor`}>{film?.actors}</Link></p>
                     </div>
                 </div>
                 {/* о фильме */}

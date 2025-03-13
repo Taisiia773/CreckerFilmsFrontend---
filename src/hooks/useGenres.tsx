@@ -32,24 +32,25 @@ export function useGenres(){
 }
 
 
-export function useGenresById(id: number | undefined){
+export function useGenresById(id: number | undefined) {
     const [genre, setGenre] = useState<IGenre>()
+
     useEffect(() => {
-        if(!id){
-            return
-        }
+        if (!id) return
+
         async function fetchGenresById() {
-            try{
+            try {
                 const response = await fetch(`http://localhost:5000/genre/${id}`)
                 const genreData = await response.json()
                 setGenre(genreData)
-            } catch(error){
-                if (error instanceof Error){
+            } catch (error) {
+                if (error instanceof Error) {
                     console.log(error.message)
                 }
             }
         }
         fetchGenresById()
-    }, [])
-    return{genre: genre}
+    }, [id]) 
+
+    return { genre }
 }

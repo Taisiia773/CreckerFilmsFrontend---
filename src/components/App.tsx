@@ -6,6 +6,7 @@ import {HistoryContextProvider} from "./context/historyContext"
 import { ActorPage } from "./ActorPage/ActorPage";
 import { LoginPage } from "./Login/Login";
 import { RegistrationPage } from "./Registration/Registration";
+import { AdminPage } from "./AdminPage/AdminPage";
 
 
 
@@ -24,6 +25,8 @@ export function AppComponent(){
                         <Route path="/actor" element={<ActorPage></ActorPage>}></Route>
                         <Route path="/login" element={<LoginPage></LoginPage>}></Route>
                         <Route path="/registration" element={<RegistrationPage></RegistrationPage>}></Route>
+
+                        <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
                         </Route>
                     </Routes>
                 </BrowserRouter>
