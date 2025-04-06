@@ -17,7 +17,7 @@ export function Main() {
                 </div> 
             </div> 
             <div>
-                <h1>emae its fyp</h1>
+                <h1>Its fyp</h1>
                 <HistoryFilms/>
             </div>
                 <FilmsList/>

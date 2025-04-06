@@ -5,9 +5,11 @@ import "./FilmPage.css"
 import { useGenresById } from "../../hooks/useGenres"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import { useComments } from "../../hooks/useCommentsById"
 
 export function FilmPage(){
     const params = useParams()
+    const { comments} = useComments(Number(params.id))
     const { film, error, loading } = useFilmById(Number(params.id))
     const [genreId, setGenreId] = useState<number | undefined>(undefined)
     const { genre } = useGenresById(genreId)
@@ -68,7 +70,9 @@ export function FilmPage(){
                 </div>
                 <div className="comments">
                     <div className="comment-one">
-                        Ура мне куnили машинку лего
+                        {comments.map(comment =>(
+                            <div key={comment.id}>{comment.text}</div>
+                        ))}
                     </div>
                 </div>
         </div>}

@@ -1,4 +1,4 @@
-.log-container {
+.login-container {
     display: flex;
     margin: auto;
     margin-top: 0px;
@@ -10,44 +10,44 @@
     flex-direction: column;
 }
 
-.log-content{
+.login-label{
     display: flex;
     flex-direction: column;
 }
 
-.log-input{
+.login-input{
     width: 570px;
     padding: 13px;
-    margin-top: 33px;
+    margin-top: 13px;
     border-radius: 17px;
     background-color: #56565650;
 }
 
-/* .log-input::placeholder{
+/* .login-input::placeholder{
     color: white;
 } */
 
-.log-link-text{
+.login-link-text{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 17px;
 }
 
-.log-forgot-pass,
-.log-reg-link{
+.login-forgot-pass,
+.login-reg-link{
     color: white;
     text-decoration: none;
 }
 
-.log-btn-div{
+.login-button-container{
     margin-top: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.log-btn{
+.login-button{
     color: #d5d2d2;
     background-color: #56565650;
     width: max-content;

@@ -16,6 +16,21 @@ body{
     border-bottom: 1px white solid;
 }
 
+.filmyLink{
+    text-decoration: none;
+    color: white;
+}
+
+.genresLink{
+    text-decoration: none;
+    color: white;
+}
+
+.usersLink{
+    text-decoration: none;
+    color: white;
+}
+
 .admin-searchBar input {
     width: 950px;
     height: 50px;
@@ -62,6 +77,87 @@ body{
 }
 
 .admin-Search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.allFilms{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* overflow-y: scroll; */
+    
+    width: 90%;
+    height: 830px;
+}
+
+.filmName{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-family: "Inter";
+}
+
+
+.headerFilms{
+    background-color: #9B9B9B;
+    width: 100%;
+    height: 59px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    color: white;
+    font-family: "Inter";
+}
+
+.nickname{
+    /* justify-content: flex-start; */
+    margin-left: 65px;
+    font-size: 24px;
+}
+
+.admin-film-item{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    width: 97%;
+}
+
+.admin-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.filmsOnly{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-items: center; */
+}
+.admin-film-item-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.quadratic{
+    /* background-color: #A44848; */
+    width: 57px;
+    height: 63px;
+    /* padding: 3px; */
+    padding-top: 11px;
+}
+
+.nameOfFilm{
     display: flex;
     flex-direction: column;
     justify-content: center;

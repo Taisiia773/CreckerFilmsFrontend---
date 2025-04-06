@@ -1,0 +1,95 @@
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .edit-film-container {
+    width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  .edit-film-container h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #cccccc;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #4fc3f7;
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  
+  .error-message {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4fc3f7;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #29b6f6;
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  

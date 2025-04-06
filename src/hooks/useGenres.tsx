@@ -44,12 +44,14 @@ export function useGenres() {
 
 export function useGenresById(id: number | undefined) {
     const [genre, setGenre] = useState<IGenre | null>(null);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     useEffect(() => {
         if (!id) return;
 
         async function fetchGenresById() {
+            setLoading(true);
             try {
                 const response = await fetch(`http://localhost:5000/genre/${id}`);
 
@@ -64,11 +66,13 @@ export function useGenresById(id: number | undefined) {
                     setError(error.message);
                     toast.error(`Ошибка загрузки жанра: ${error.message}`);
                 }
+            } finally {
+                setLoading(false);
             }
         }
 
         fetchGenresById();
     }, [id]);
 
-    return { genre, error };
+    return { genre, loading, error };
 }

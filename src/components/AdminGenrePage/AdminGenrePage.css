@@ -66,3 +66,50 @@ body{
     flex-direction: column;
     justify-content: center;
 }
+
+.admin-genre-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.quadratic2{
+    background-color: #4C4D7E;
+    width: 68px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    text-align: center;
+    border-radius: 13px;
+}
+
+.oneMoreDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.oneMoreDiv2{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.imgEdit{
+    width: 47px;
+    height: 53px;
+    border-radius: 13px;
+}
+
+.pRandom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.genres{
+    border-bottom: 1px solid white;
+}
